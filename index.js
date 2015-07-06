@@ -67,7 +67,7 @@ util.inherits(module.exports, EventEmitter);
  * Request event
  *
  * @event request
- * @type { string }
+ * @type {string}
  * @property {integer} requestId - The 
  */
 
