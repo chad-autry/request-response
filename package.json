@@ -1,6 +1,6 @@
 {
   "name": "request-response",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manages multiple requests and responses across a read and a write stream",
   "main": "index.js",
   "scripts": {
