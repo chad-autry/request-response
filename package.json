@@ -4,12 +4,13 @@
   "description": "Manages multiple requests and responses across a read and a write stream",
   "main": "index.js",
   "scripts": {
+    "test": "npm run jshint",
     "jshint": "jshint index.js",
     "jsdoc": "jsdoc index.js -d ./target/jsdoc"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chad-autry/cartesian-hexagonal.git"
+    "url": "https://github.com/chad-autry/request-response.git"
   },
   "keywords": [
     "stream",
