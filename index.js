@@ -100,7 +100,7 @@ module.exports.prototype.pipeRequest = function(stream, callback) {
     stream.pipe(this.outStream, { end: false });
     stream.on('end', function(){
         //The stream ended, write out the next 
-      requestHelper.outStream.write(("q    " + requestHelper.nextRequestId).slice(-4) + '\u0029');
+      requestHelper.outStream.write('q' + ("    " + requestHelper.nextRequestId).slice(-4) + '\u0029');
       if (!!callback) {
           //callback provided, listen for a response
           requestHelper.once('response' + requestHelper.nextRequestId, callback);
@@ -120,7 +120,7 @@ module.exports.prototype.pipeRequest = function(stream, callback) {
 module.exports.prototype.writeRequest = function(msgBody, callback) {
     //TODO if there is a currently un-ended stream writing, queue this write
     //Write the message body and requestId
-    this.outStream.write(msgBody +("q    " + this.nextRequestId).slice(-4) + '\u0029');
+    this.outStream.write(msgBody + 'q' +("    " + this.nextRequestId).slice(-4) + '\u0029');
     if (!!callback) {
         //callback provided, listen for a response
         this.once('response' + this.nextRequestId, callback);
@@ -138,5 +138,5 @@ module.exports.prototype.writeRequest = function(msgBody, callback) {
 module.exports.prototype.writeResponse = function(requestId, msgBody) {
     //TODO if there is a currently un-ended stream writing, queue this write
     //Write the message body and requestId
-    this.outStream.write(msgBody +("s    " + requestId).slice(-4) + '\u0029');
+    this.outStream.write(msgBody + 's' + ("    " + requestId).slice(-4) + '\u0029');
 };
